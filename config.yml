@@ -1,5 +1,4 @@
-# baseurl: "https://ulrik-vj.github.io/portfolio/"
-baseurl: "https://ulrikvinther.tech/portfolio/"
+baseurl: "https://ulrik-vj.github.io/portfolio/"
 title: "Ulrik's Webpage"
 languageCode: "en-UK"
 theme: "no-js-hugo-theme"
