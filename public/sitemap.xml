@@ -2,20 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ulrik-vj.github.io/portfolio/</loc>
+    <loc>https://ulrikvinther.tech/</loc>
     <lastmod>2023-11-20T11:36:20+01:00</lastmod>
   </url><url>
-    <loc>https://ulrik-vj.github.io/portfolio/posts/</loc>
+    <loc>https://ulrikvinther.tech/posts/</loc>
     <lastmod>2023-11-20T11:36:20+01:00</lastmod>
   </url><url>
-    <loc>https://ulrik-vj.github.io/portfolio/posts/post1_test/</loc>
+    <loc>https://ulrikvinther.tech/posts/post1_test/</loc>
     <lastmod>2023-11-20T11:36:20+01:00</lastmod>
   </url><url>
-    <loc>https://ulrik-vj.github.io/portfolio/about/</loc>
+    <loc>https://ulrikvinther.tech/about/</loc>
     <lastmod>2023-03-16T10:41:31+01:00</lastmod>
   </url><url>
-    <loc>https://ulrik-vj.github.io/portfolio/categories/</loc>
+    <loc>https://ulrikvinther.tech/categories/</loc>
   </url><url>
-    <loc>https://ulrik-vj.github.io/portfolio/tags/</loc>
+    <loc>https://ulrikvinther.tech/tags/</loc>
   </url>
 </urlset>
