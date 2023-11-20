@@ -14,6 +14,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: true
+
       - name: Checkout destination
         uses: actions/checkout@v3
         if: github.ref == 'refs/heads/main'
@@ -21,11 +22,10 @@ jobs:
           ref: gh-pages
           path: built-site
 
-     - name: Setup Hugo
+      - name: Setup Hugo
         run: |
           curl -L -o /tmp/hugo.tar.gz 'https://github.com/gohugoio/hugo/releases/download/v0.120.4/hugo_extended_0.120.4_linux-amd64.tar.gz'
           tar -C ${RUNNER_TEMP} -zxvf /tmp/hugo.tar.gz hugo
-
       - name: Build
         run: ${RUNNER_TEMP}/hugo
 
