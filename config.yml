@@ -1,0 +1,33 @@
+baseurl: "https://ulrik-vj.github.io/portfolio/"
+title: "Ulrik's Webpage"
+languageCode: "en-UK"
+theme: "no-js-hugo-theme"
+enableEmoji: true
+
+params:
+  themeStyleSwitcher: true
+  themeStyle: "dark.css"
+  footerText: "Ulriks webpage @2023"
+
+markup:
+  highlight:
+    codeFences: true
+    noClasses: false
+  tableOfContents:
+    startLevel: 1
+    endLevel: 6
+
+menu:
+  main:
+    - identifier: "home"
+      name: "Home"
+      url: "/"
+      weight: -120
+    - identifier: "posts"
+      name: "Posts"
+      url: "/posts/"
+      weight: -110
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: -100
