@@ -1,0 +1,40 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+	<title>Ulrik&#39;s Webpage</title>
+	<link>https://ulrik-vj.github.io/portfolio/</link>
+	<description>Recent content in Home on Ulrik&#39;s Webpage</description>
+	<generator>Hugo -- gohugo.io</generator>
+	<language>en-UK</language>
+	<lastBuildDate>Mon, 20 Nov 2023 11:36:20 +0100</lastBuildDate>
+    
+        <atom:link href="https://ulrik-vj.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
+	
+	
+	<item>
+		<title>test</title>
+		<link>https://ulrik-vj.github.io/portfolio/posts/post1_test/</link>
+		<pubDate>Mon, 20 Nov 2023 11:36:20 +0100</pubDate>
+		
+		<guid>https://ulrik-vj.github.io/portfolio/posts/post1_test/</guid>
+		<description>&lt;h1 id=&#34;this-is-a-test-page&#34;&gt;this is a test page&lt;/h1&gt;
+&lt;p&gt;see this amazing python script for no reason&lt;/p&gt;
+&lt;p&gt;hello.py&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;hello world&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+	</item>
+	
+	<item>
+		<title>About</title>
+		<link>https://ulrik-vj.github.io/portfolio/about/</link>
+		<pubDate>Thu, 16 Mar 2023 10:41:31 +0100</pubDate>
+		
+		<guid>https://ulrik-vj.github.io/portfolio/about/</guid>
+		<description>&lt;p&gt;This site is intended for sharing knowledge and projects i&amp;rsquo;m working on.&lt;/p&gt;
+&lt;p&gt;Right now i run my setup on a couple of old scrappy laptops. Which as worse as it sounds, is still a great way to start getting in to homelab. And i have learned quite a lot about Proxmox just this way.
+I hope to expand in the future, implementing more advanced tech gear to the lab, such rack servers.&lt;/p&gt;
+&lt;p&gt;My setup consist of 2 Proxmox servers, one as Hypervisor and another as backup. In my hypervisor i run services such as Wazuh, an NFS server, a few docker containers (Such as Jellyfin, Kanboard, Dashy, netbox, nginxproxymanager).&lt;/p&gt;
+</description>
+	</item>
+	
+	</channel>
+</rss>
