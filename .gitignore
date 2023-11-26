@@ -1,10 +1,10 @@
 .hugo_build.lock
-i18n/
-assets/
-data/
-layouts/
-archetypes/
-content/
-data/
-static/
+i18n/*
+assets/*
+data/*
+layouts/*
+archetypes/*
+content/*
+data/*
+static/*
 
