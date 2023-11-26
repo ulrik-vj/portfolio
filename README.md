@@ -1,3 +1,3 @@
 # UVJ portfolio
 
-Link to my portfolio **[EFF](https://ulrikvinther.tech)**.
+Link to my portfolio **[ulrikvinther.tech](https://ulrikvinther.tech)**.
