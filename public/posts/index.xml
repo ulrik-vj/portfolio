@@ -5,22 +5,24 @@
         <description>Recent content in Posts on Ulrik&#39;s Webpage</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-UK</language>
-        <lastBuildDate>Mon, 20 Nov 2023 11:36:20 +0100</lastBuildDate>
+        <lastBuildDate>Tue, 21 Nov 2023 21:59:02 +0100</lastBuildDate>
     
         <atom:link href="https://ulrikvinther.tech/posts/index.xml" rel="self" type="application/rss+xml" />
         
         
         <item>
-                <title>test</title>
-                <link>https://ulrikvinther.tech/posts/post1_test/</link>
-                <pubDate>Mon, 20 Nov 2023 11:36:20 +0100</pubDate>
+                <title>cis18 ubuntu22 &amp; debian11 bash script for IG1</title>
+                <link>https://ulrikvinther.tech/posts/post3_cis18_ubuntu22_debian11_script_ig1/</link>
+                <pubDate>Tue, 21 Nov 2023 21:59:02 +0100</pubDate>
                 
-                <guid>https://ulrikvinther.tech/posts/post1_test/</guid>
-                <description>&lt;h1 id=&#34;this-is-a-test-page&#34;&gt;this is a test page&lt;/h1&gt;
-&lt;p&gt;see this amazing python script for no reason&lt;/p&gt;
-&lt;p&gt;hello.py&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;hello world&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+                <guid>https://ulrikvinther.tech/posts/post3_cis18_ubuntu22_debian11_script_ig1/</guid>
+                <description>&lt;p&gt;In the last following months i have been developing this bash script to get a better understanding of debian and ubuntu CIS 18 requirements.&lt;/p&gt;
+&lt;p&gt;I have made it so that it ensures, that the new debian/ubuntu system, is compliant with CIS 18 IG1 remidations.&lt;/p&gt;
+&lt;p&gt;It will also work on debian 12. But, CIS is yet to create a new requirement list for debian 12, so use at your own risk until they realease the updated requirements.&lt;/p&gt;
+&lt;p&gt;While it still lacks some features, it works as intended when run on a fresh VM. I hope to add the remaining features in the future.&lt;/p&gt;
+&lt;p&gt;Enough said. Check out my repo and try it yourself!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ulrik-vj/cis18-benchmarks-ubuntu-debian-ig1&#34;&gt;Link to CIS 18 ubuntu 22 / Debian 11 IG1 script repo &lt;/a&gt;&lt;/p&gt;
+</description>
         </item>
         
         </channel>
