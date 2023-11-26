@@ -3,6 +3,7 @@ title: "Ulrik's Webpage"
 languageCode: "en-UK"
 theme: "no-js-hugo-theme"
 enableEmoji: true
+publishDir: "public"
 
 params:
   themeStyleSwitcher: true
