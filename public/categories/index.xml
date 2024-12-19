@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
         <title>Ulrik&#39;s portfolio</title>
-        <link>https://ulrik-vj.github.io/portfolio/categories/</link>
+        <link>http://localhost:1313/portfolio/categories/</link>
         <description>Recent content in categories on Ulrik&#39;s portfolio</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-UK</language>
     
-        <atom:link href="https://ulrik-vj.github.io/portfolio/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/portfolio/categories/index.xml" rel="self" type="application/rss+xml" />
         
         
         </channel>
