@@ -1,3 +1,7 @@
+:root {
+	--document-margin: 15pt;
+}
+
 h1 { font-size: 1.50em; }
 h2 { font-size: 1.40em; }
 h3 { font-size: 1.20em; }
@@ -5,600 +9,836 @@ h4 { font-size: 1.00em; }
 h5 { font-size: 0.85em; }
 h6 { font-size: 0.75em; }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-	text-decoration: none;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 1.5em;
 }
 
 @media (hover: hover) {
-	/* For devices which support hover, hide the heading URL fragment
-	   link/icon until the mouse hovers over the heading */
+  /* For devices which support hover, hide the heading URL fragment/link/icon until the mouse hovers over the heading */
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor {
+    visibility: visible;
+  }
 
-	h1:hover .heading-anchor,
-	h2:hover .heading-anchor,
-	h3:hover .heading-anchor,
-	h4:hover .heading-anchor,
-	h5:hover .heading-anchor,
-	h6:hover .heading-anchor {
-		visibility: visible;
-	}
-
-	h1 .heading-anchor,
-	h2 .heading-anchor,
-	h3 .heading-anchor,
-	h4 .heading-anchor,
-	h5 .heading-anchor,
-	h6 .heading-anchor {
-		visibility: hidden;
-	}
+  h1 .heading-anchor,
+  h2 .heading-anchor,
+  h3 .heading-anchor,
+  h4 .heading-anchor,
+  h5 .heading-anchor,
+  h6 .heading-anchor {
+    visibility: hidden;
+  }
 }
 
 .heading-anchor {
+  /* color: grey; */
+  /*margin-left: 0.5em; */
+  /*font-size: 0.75em; */
+    display: inline;
 	color: grey;
 	margin-left: 0.5em;
 	font-size: 0.75em;
 }
 
-.heading-anchor:hover {
-	text-decoration: none;
+.heading-anchor a:hover {
+  text-decoration: none;
 }
 
 .heading-anchor img {
-	height: 1em;
+  height: 1em;
 }
 
-a {
-	text-decoration: none;
+.a {
+  text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .dont-show {
-	display: none;
+  display: none;
 }
 
 /* Improvements to Hugo Chroma syntax highlighting */
-
 .highlight {
-	margin-top: 1em;
-	margin-bottom: 1em;
-	/* set the tab size for browsers that support it */
-	tab-size: 4;
-	-moz-tab-size: 4;
-	/* needed for the iPhone so that the two columns (line numbers and code) don't have different font sizes */
-	-webkit-text-size-adjust: 100%;
+  margin-top:1em;
+  margin-bottom: 1em;
+  /* set the tab size for browsers that support it */
+  tab-size: 5;
+  -moz-tab-size: 4;
+  /* for the iPhone so that the two columns (line numbers and code) don't have different font sizes */
+  -webkit-text-size-adjust: 100%;
+  
 }
 
 .highlight > * {
-	padding: 0.5em;
-	border-width: 2px;
-	border-style: solid;
+  padding: 0.5em; 
+  border-width: 2px;
+  border-style: solid;
+  font-size: 1rem;
 }
 
+
 .highlight pre {
-	margin: 0px;
-	overflow-x: auto;
-	word-wrap: normal;
+  margin: 0px;
+  overflow-x: auto;
+  word-wrap: normal;
+  
+ 
+  
 }
 
 .highlight td.lntd pre {
-	/* needed to fix an iPhone scrolling bug */
-	overflow-x: hidden;
+  /* needed to fix an iPhone scrolling bug */
+  overflow-x: hidden;
+  /* Extra changes to fix width issues and extra code block border */
+  border: none;
+  padding-left: 0;     /* Remove padding on the left */
+  margin-left: 0;      /* Ensure no left margin */
+  width: 97%;         /* Ensure the pre block stretches fully */
+  
 }
 
+
 .highlight td.lntd:last-child {
-	/* needed until this bug is fixed: https://github.com/alecthomas/chroma/issues/225 */
-	width: 100%;
+  /* needed until this bug is fixed: https://github.com/alecthomas/chroma/issues/225 */
+  width: 100%;
+
 }
 
 /* Improvements to inline code blocks */
+.code {
+  font-size: 98%;
 
-code {
-	font-size: 98%;
 }
 
 :not(pre) > code {
-	/* inline code elements */
-	background-color: rgba(25, 25, 25, 0.05);
-	border-radius: 5px;
-	font-size: 80%;
-	padding-top: 0.2em;
-	padding-bottom: 0.2em;
-	padding-left: 0.4em;
-	padding-right: 0.4em;
+  /* inline code elements */
+  background-color: rgba(25, 25, 25, 0.05);
+  border-radius: 5px;
+  font-size: 80%;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+
+/* Make code responsive on smaller screens */
+@media (max-width: 768px) {
+  .highlight pre {
+    font-size: 0.7rem;  /* Smaller font size on mobile */
+    padding: 0.5em;     /* Less padding to make it fit better */
+    word-wrap: break-word;  /* Allow wrapping on long words */
+  }
+
+  .highlight td.lntd {
+    font-size: 0.7rem;  /* Smaller font size for line numbers */
+  }
+
+  /* Adjust for very small screens (below 480px) */
+  @media (max-width: 480px) {
+    .highlight pre {
+      font-size: 0.7rem;  /* Even smaller font size on very small screens */
+      padding: 0.5em;     /* Reduced padding */
+    }
+
+    .highlight td.lntd {
+      font-size: 0.7rem;  /* Smaller font size for line numbers */
+    }
+  }
 }
 
 /* Formatting for "notice" shortcodes */
-
 .notice {
-	margin: 1.5em 0;
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: #E9E9E9;
+  margin: 1.5em 0;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #E9E9E9;
 }
 
 @media only screen and (max-width: 500pt) {
-	.notice {
-		width: 100%;
-	}
+  .notice {
+    width: 100%;
+  }
 }
 
 .notice > hr {
-	display: none; /* only want the child hr elements to appear if css is disabled */
+  display: none;
+  /* only want the child hr elements to appear if CSS is disabled */
 }
 
 .notice .notice-title {
-	margin: 0;
-	padding: 0.4em;
-	line-height: 1em;
-	background-color: #D5D5D5;
+  margin: 0;
+  padding: 0.4em;
+  line-height: 1em;
+  background-color: #D5D5D5;
 }
 
 .notice .notice-title span {
-	vertical-align: -10%; /* we don't want the font descender space to be centered as well */
+  vertical-align: -10%;
+  /* we don't want the font descent to be centered as well */
 }
 
 .notice .notice-title .notice-title-icon {
-	display: inline-block;
-	vertical-align: middle;
-	margin-left: 0.15em;
-	margin-right: 0.25em;
-	height: 0.85em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.15em;
+  margin-right: 0.25em;
+  height: 0.85em;
 }
 
 .notice .notice-body {
-	padding: 0.6em;
+  padding: 0.6em;
 }
 
 .notice .notice-body p:first-child {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 .notice .notice-body p {
-	margin: 0.8em 0;
+  margin: 0.8em 0;
 }
 
-/* ************************ */
-
+/* Blockquote styling */
 blockquote {
-	color: #404040;
-	border-left: 0.25em solid #CCC;
-	padding-left: 0.5em;
-	margin-left: 1.5em;
+  color: #404040;
+  border-left: 0.25em solid #CCC;
+  padding-left: 0.5em;
+  margin-left: 1.5em;
 }
 
 .title-header {
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
 
-.title-header > h1{
-	margin-top: 0;
-	margin-bottom: 0.3em;
+.title-header > h1 {
+  margin-top: 0;
+  margin-bottom: 0.3em;
 }
 
 .title-header-date {
-	color: rgb(90, 90, 90);
-	font-size: 80%;
+  color: rgb(90, 90, 90);
+  font-size: 80%;
 }
 
 .title-list > h2, .title-list > h3, .title-list > h4, .title-list > h5, .title-list > h6{
-	margin-bottom: 0.1em;
+  margin-bottom: 0.1em;
 }
 
 .body-list p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-.title-list-date {
-	color: rgb(90, 90, 90);
-	font-size: 80%;
+.title-list-te {
+  color: rgb(90, 90, 90);
+  font-size: 80%;
 }
 
 .table-of-contents {
-	border-width: 2px;
-	border-style: solid;
-	padding: 1em;
-	margin-bottom: 2em;
-	font-size: 0.9em;
+  border-width: 2px;
+  border-style: solid;
+  padding: 1em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
 }
 
 .table-of-contents nav > ul {
-	/* only the most-parent ul element */
-	margin-bottom: 0;
+  /* Only the most-parent ul element */
+  margin-bottom: 0;
 }
 
 .table-of-contents ul {
-	list-style: none;
-	padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .table-of-contents li {
-	margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
 .table-of-contents ul ul {
-	list-style: none;
-	padding-left: 1.0em;
+  list-style: none;
+  padding-left: 1.0em;
 }
 
 .table-of-contents-title {
-	font-size: 1.2em;
-	font-weight: bold;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .section-list {
-	padding-left: 0;
+  padding-left: 0;
 }
 
 .section-list li {
-	display: inline-block;
-	margin-right: 0.5em;
+  display: inline-block;
+  margin-right: 0.5em;
 }
 
 .section-list li:last-child {
-	margin-right: 0em;
+  margin-right: 0;
 }
 
 .section-list li > * {
-	background-color: rgba(25, 25, 25, 0.05);
-	border-radius: 5px;
-	font-size: 90%;
-	padding-top: 0.2em;
-	padding-bottom: 0.2em;
-	padding-left: 0.4em;
-	padding-right: 0.4em;
+  background-color: rgba(25, 25, 25, 0.05);
+  border-radius: 5px;
+  font-size: 90%;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
 }
 
 .links {
-	font-size: 120%;
-	list-style-type: none;
-	line-height: 1;
-	padding: 0;
-	margin: 0;
-	margin-top: 9pt;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	overflow: hidden;
-	-webkit-overflow-scrolling: touch; /* this needs to go here for some reason */
+  font-size: 120%;
+  list-style-type: none;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  margin-top: 9pt;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; /* This needs to go here for some reason KIG OM SKAL FJERNES*/
 }
 
 .links li {
-	margin-right: 1em;
+  margin-right: 1em;
 }
 
 .links li > * {
-	display:inline-block;
+  display: inline-block;
 }
 
 .links li:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 .links a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .links a:hover {
-	color: #505050;
+  color: #5050A0;
 }
 
 .overlay {
-	position: fixed;
-	visibility: hidden;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.7);
-	z-index: 2;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .header-right {
-	position: absolute;
-	top: 0;
-	right: 0;
-	display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
 }
 
-.header-right * {
-	margin-left: 1em;
+.header-right > * {
+  margin-left: 1em;
 }
 
 .header-right *:first-child {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 .clickable-header-label {
-	cursor: pointer;
+  cursor: pointer;
+  padding: var(--label-padding);
 }
 
 .clickable-header-label * {
-	height: 1em;
-	width: auto; /* to override the <img width="__"> attribute when css is supported */
+  height: 1em;
+  width: auto;
+  /* To override the <img width="__"> attribute when CSS is supported */
 }
 
 #show-hide-menu-label {
-	display: none;
+  display: none;
+}
+
+#show-hide-menu-label * {
+	/* duration for the rotation transition of the hamburger image */
+	transition-duration: 100ms;
 }
 
 body {
-	font-size: 13pt;
-	font-family: Lato, Arial, Helvetica, "Liberation Sans", sans-serif;
-	line-height: 1.45;
-	margin: 0;
+  font-size: 13pt;
+  font-family: Lato, Arial, Helvetica, "Liberation Sans", sans-serif;
+  line-height: 1.45;
+  margin: 0;
 }
 
 .title {
-	font-weight: bold;
-	font-size: 140%;
-	line-height: 1em;
+  font-weight: bold;
+  font-size: 100%;
+  line-height: 1em;
 }
 
 .title a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .header {
-	background-color: lightgray;
-	background-size: 100%;
-	background-position: bottom;
-	display: inline-block;
-	z-index: 1; /* this prevents images with css filters from appearing above the header when in portrait mode */
-	width: 100%;
+  background-color: lightgray;
+  background-size: 100%;
+  background-position: bottom;
+  display: inline-block;
+  z-index: 1; /* Prevents images with CSS filters from appearing above the header in portrait mode */
+  width: 100%;
 }
 
 .header-content {
-	margin: 15pt;
-	position: relative; /* so that "position:absolute" works for the menu label */
+  margin: 15pt;
+  position: relative; /* So that "position: absolute" works for the menu label */
 }
 
 .body {
-	display: inline-block;
-	width: 100%;
+  display: inline-block;
+  width: 100%;
 }
 
 .body-content {
-	margin: 15pt;
-	word-wrap: break-word;
+  margin: 15pt;
+  word-wrap: break-word;
 }
 
 /* Image/Figure formatting */
-
 .body-content :not(figure) img {
-	/* regular image elements should be inline elements */
-	max-width: 100%;
-	max-height: 60vw; /* if the image is really tall, we don't want the width to be 100% */
+  /* Add any specific image formatting here */
+    max-width: 100%;
+ 	max-height: 100vw; /* if the image is really tall, we don't want the width to be 0% */
+}
+/* Regular image elements should be inline elements */
+.img {
+  max-width: 100%;
+  max-height: 100vw; /* if the image is really tall, we don't want the width to be 0% */
 }
 
+/* Body content figure styling */
 .body-content figure {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70%;
 }
 
 .body-content figure img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 0.5em;
-	max-width: 100%;
-	max-height: 40vw; /* if the image is really tall, we don't want the width to be 70% */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5em;
+  max-width: 100%;
+  max-height: 40vw; /* if the image is really tall, we don't want the width to be 70% */
 }
 
 .body-content figure:not(.color-adapting-image) img {
-	/* if the image is designed to adapt to the theme, then don't use a background */
-	background-color: rgb(255, 255, 255); /* images with transparent backgrounds typically assume a light background */
+  /* If the image is designed to adapt to the theme, don't use a background */
+  background-color: rgb(255, 255, 255); /* Images with transparent backgrounds typically assume a light background */
 }
 
+/* Figure caption styling */
 .body-content figure figcaption {
-	font-size: 90%;
-	line-height: 1.5em;
-	padding-bottom: 0.3em;
-	border-bottom: 2px solid lightgray;
+  font-size: 90%;
+  line-height: 1em;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid lightgray;
 }
 
 .body-content figure figcaption * {
-	margin: 0;
+  margin: 0;
 }
 
+/* Portrait media query */
 @media only screen and (orientation: portrait) {
-	.body-content :not(figure) img,
-	.body-content figure img {
-		/* need to target both so that they're more specific */
-		max-height: 100vw;
-	}
+  .body-content :not(figure) img,
+  .body-content figure img {
+    max-height: 100vw;
+  }
 }
 
+/* Small screen media query */
 @media only screen and (max-width: 400pt) {
-	.body-content figure {
-		max-width: 100%;
-	}
-
-	.body-content figure figcaption {
-		margin-left: 5%;
-		margin-right: 5%;
-	}
+  .body-content figure {
+    max-width: 100%;
+  }
+  
+  .body-content figure figcaption {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
-/* ************************ */
-
+/* Main container styling */
 .main {
-	width: 700pt; /* make sure to also change this in the media query */
-	margin: 0 auto;
-	margin-top: 10pt;
-	margin-bottom: 10pt;
-	box-sizing: border-box;
-	box-shadow: 0 0 10px rgba(50, 50, 50, .17);
+  width: 700pt; /* Make sure to also change this in the media query */
+  margin: 0 auto;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(50, 50, 50, .17);
 }
 
 .footer {
-	text-align: center;
-	font-size: 80%;
+  text-align: center;
+  font-size: 80%;
 }
 
-
+/* Portrait orientation sticky header */
 @media only screen and (orientation: portrait) {
-	.header {
-		top: 0;
-		position: sticky;
-		position: -webkit-sticky; /* needed for iOS */
-		box-shadow: 0 0 1em rgba(30, 30, 30, .3);
-	}
+  .header {
+    top: 0;
+    position: sticky;
+    position: -webkit-sticky; /* Needed for iOS */
+    box-shadow: 0 0 1em rgba(30, 30, 30, .3);
+  }
 
-	.body-content :target::before {
-		/* When linking to tags with 'id's (example:
-		   'website.com/post/#heading'), make them
-		   appear lower down the page so that they
-		   don't appear under the sticky header set
-		   above.
-		   See: https://stackoverflow.com/a/24298427
-		   Note that this causes the cursor text
-		   selection of the target to behave
-		   undesirably.
-		*/
-		content: '';
-		display: block;
-		height: 3em;
-		margin-top: -3em;
-		visibility: hidden;
-		pointer-events: none;
-	}
+  .body-content :target::before {
+    /* When linking to tags with 'id's, make them appear lower down the page so they don't appear under the sticky header */
+    content: '';
+    display: block;
+    height: 3em;
+    margin-top: -3em;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
-
+/* Small screen media query for max-width: 700pt */
 @media only screen and (max-width: 700pt) {
-	.main {
-		width: 100%;
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+  .main {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-	body {
-		font-size: 12pt;
-		background-color: white;
-	}
+  body {
+    font-size: 12pt;
+    background-color: white;
+  }
 }
 
+/* Max-width: 400pt layout adjustments */
 @media only screen and (max-width: 400pt) {
-	.header-right {
-		height: 100%;
-		align-items: center;
-	}
+  .header-right {
+    height: 100%;
+    align-items: center;
+  }
 
-	.clickable-header-label {
-		display: inline-flex;
-	}
+  .clickable-header-label {
+    display: inline-flex;
+  }
 
-	.clickable-header-label * {
-		vertical-align: middle;
-	}
+  .clickable-header-label * {
+    vertical-align: middle;
+  }
 
-	#show-hide-menu-label {
-		display: inherit;
-	}
+  #show-hide-menu-label {
+    display: inherit;
+  }
 
-	.show-hide-menu-input:checked ~ .main .links {
-		visibility: visible;
-		opacity: 1;
-		right: 0;
-		transition: all 0.3s;
+  .show-hide-menu-input:checked ~ .main .links {
+    visibility: visible;
+    opacity: 1;
+    right: 0;
+    transition: all 0.3s;
+  }
+  
+  .show-hide-menu-input:checked ~ .main #show-hide-menu-label > img {
+		transform: rotate(90deg);
 	}
+  
+  .show-hide-menu-input:checked ~ .main .overlay {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+ 
 
-	.show-hide-menu-input:checked ~ .main .overlay {
-		visibility: visible;
-		opacity: 1;
-		transition: opacity 0.3s;
-	}
+  .links {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -100px; /* Start to the right for the transition */
+    min-width: 75%;
+    z-index: 3;
+    background-color: rgb(247, 247, 247);
+    padding: 10pt;
+    margin: 0;
+  }
 
-	.links {
-		display: block;
-		visibility: hidden;
-		opacity: 0;
-		overflow-y: scroll;
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		right: -100px; /* start to the right for the transition */
-		min-width: 75%;
-		z-index: 3;
-		background-color: rgb(247, 247, 247);
-		padding: 10pt;
-		margin: 0;
-	}
+  .links li {
+    margin-right: 0;
+    border-bottom: solid 1px gray;
+  }
 
-	.links li {
-		margin-right: 0;
-		border-bottom: solid 1px gray;
-	}
+  .links li > * {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 13px;
+  }
 
-	.links li > * {
-		box-sizing: border-box;
-		width: 100%;
-		padding: 13px;
-	}
+  .links li:first-child {
+    border-top: solid 1px gray;
+    margin-top: 0px;
+  }
 
-	.links li:first-child {
-		border-top: solid 1px gray;
-		margin-top: 0px;
-	}
+  .header-content {
+    margin: 8pt 10pt;
+  }
 
-	.header-content {
-		margin: 8pt 10pt;
-	}
+  .body-content {
+    margin: 10pt;
+  }
 
-	.body-content {
-		margin: 10pt;
-	}
+  .title a {
+    vertical-align: -10%; /* We don't want the font descender space to be centered as well */
+  }
+}
+/* Print media query */
+@media print {
+  body {
+    background-color: initial !important;
+  }
 
-	.title a {
-		vertical-align: -10%; /* we don't want the font descender space to be centered as well */
-	}
+  .main {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    box-shadow: none !important;
+  }
+
+  .hr {
+    background-color: initial !important;
+    background-image: none !important;
+  }
+
+  .header-content {
+    margin: 0;
+  }
+
+  .body-content {
+    margin: 0;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .links {
+    display: none;
+  }
 }
 
-@media print {
-	body {
-		background-color: initial !important;
-	}
+/* Post banner image */
+.post-banner img {
+  width: 100%; /* Make the image responsive */
+  height: 200px; /* Maintain aspect ratio */
+  border-radius: 5px; /* Optional: rounded corners */
+  margin-bottom: 10px; /* Space below the banner */
+}
 
-	.main {
-		margin-top: 0;
-		margin-bottom: 0;
-		width: 100%;
-		box-shadow: none !important;
-	}
+/* Post box styling */
+.post-list .post-box {
+  margin-left: 0; /* Remove the left margin */
+  margin-right: 0; /* Remove the right margin */
+  border-bottom: 2px solid #ccc; /* Add a bottom border to separate the posts */
+  padding-bottom: 40px;
+  margin-bottom: 40px; /* Add some space between the posts */
+}
 
-	.header {
-		background-color: initial !important;
-		background-image: none !important;
-	}
+/* Remove separation line from last post in post-list */
+.post-list .post-box:last-child {
+  border-bottom: none; /* Remove the bottom border from the last post */
+  margin-bottom: 2px; /* Remove the margin from the last post */
+  padding-bottom: 0; /* Remove the padding from the last post */
+}
 
-	.header-content {
-		margin: 0;
-	}
+/* Post box banner styling */
+.post-list .post-box .post-banner {
+  float: left; /* Make the banner float to the left */
+  margin-right: 10px; /* Add space between the banner and the text */
+}
 
-	.body-content {
-		margin: 0;
-	}
+.post-list .post-box .post-banner img {
+  width: 210px; /* Set a fixed width for the banner */
+  height: 210px; /* Set a fixed height for the banner */
+  border-radius: 5px; /* Optional: rounded corners */
+}
 
-	.header-right {
-		display: none;
-	}
+/* Align post title with the top of the image banner */
+.post-list .post-box .title-list {
+  margin-top: 0; /* Remove the top margin */
+  padding-top: 0; /* Remove the top padding */
+}
 
-	.links {
-		display: none;
-	}
+/* Customize tags for post */
+.post-tags {
+  font-size: 13px;
+  font-style: italic;
+  color: #666;
+}
+
+.post-tags-taxonomy {
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 10px;
+}
+
+.post-list-taxonomy {
+  font-size: 13px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Responsive layout for small screens (phones) */
+@media (max-width: 768px) {
+  .post-tags-taxonomy {
+    display: block; /* Make the tags stack vertically */
+    width: 100%; /* Make each box take up the full width */
+    margin: 5px 0; /* Reduce margin for mobile devices */
+  }
+
+  .post-list-taxonomy {
+    text-align: left; /* Center-align items in the list */
+  }
+}
+
+/* Make post-list responsive for mobile devices */
+@media only screen and (max-width: 700pt) {
+  .post-list .post-box .post-banner {
+    float: none; /* Remove the float */
+    margin-right: 0; /* Remove the margin */
+  }
+
+  .post-list .post-box .post-banner img {
+    width: 100%; /* Make the image full-width */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+/* Highlight button for the page the user is currently on */
+.pagination-active {
+  background-color: #607c9e !important; /* Override other CSS for buttons */
+  font-weight: bold; /* Highlight buttons with bold text */
+  border: 2px solid #333; /* Make a slight border around the button */
+}
+
+/* Tag filter styling */
+.tag-filter {
+  margin-bottom: 20px;
+}
+
+.tag-filter select {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.tag-filter label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Copy button styling */
+/* needs fixing for when code reaches a certain lenght limit button does not follow */
+.copy-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #6c757d;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  z-index: 10;  /* Ensure button stays above code */
+}
+
+.copy-button:hover {
+  background-color: #5a6268;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Preformatted text block styling */
+pre {
+  position: relative;
+  background-color: #f8f9fa;
+  border: 1px solid #e1e1e1;
+  padding: 16px;
+  border-radius: 4px;
+  overflow: auto;
+  
+}
+
+/* Media queries for responsiveness to ensure copy button is scaled with block */
+@media (max-width: 768px) {
+  pre {
+    padding: 8px;
+  }
+
+  .copy-button {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  pre {
+    padding: 8px;
+  }
+
+  .copy-button {
+    font-size: 0.625rem;
+    padding: 2px 6px;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+@media (max-width: 320px) {
+  pre {
+    padding: 6px;
+  }
+
+  .copy-button {
+    font-size: 0.5rem;
+    padding: 1px 4px;
+    right: 3px;
+    top: 3px;
+  }
 }

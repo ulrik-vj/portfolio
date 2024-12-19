@@ -1,29 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-        <title>Ulrik&#39;s Webpage</title>
-        <link>https://ulrikvinther.tech/posts/</link>
-        <description>Recent content in Posts on Ulrik&#39;s Webpage</description>
+        <title>Ulrik&#39;s portfolio</title>
+        <link>https://ulrik-vj.github.io/posts/</link>
+        <description>Recent content in Posts on Ulrik&#39;s portfolio</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-UK</language>
-        <lastBuildDate>Tue, 21 Nov 2023 21:59:02 +0100</lastBuildDate>
     
-        <atom:link href="https://ulrikvinther.tech/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://ulrik-vj.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
-        
-        <item>
-                <title>cis18 ubuntu22 &amp; debian11 bash script for IG1</title>
-                <link>https://ulrikvinther.tech/posts/post3_cis18_ubuntu22_debian11_script_ig1/</link>
-                <pubDate>Tue, 21 Nov 2023 21:59:02 +0100</pubDate>
-                
-                <guid>https://ulrikvinther.tech/posts/post3_cis18_ubuntu22_debian11_script_ig1/</guid>
-                <description>&lt;p&gt;In the last following months i have been developing this bash script to get a better understanding of debian and ubuntu CIS 18 requirements.&lt;/p&gt;
-&lt;p&gt;I have made it so that it ensures, that the new debian/ubuntu system, is compliant with CIS 18 IG1 remidations.&lt;/p&gt;
-&lt;p&gt;It will also work on debian 12. But, CIS is yet to create a new requirement list for debian 12, so use at your own risk until they realease the updated requirements.&lt;/p&gt;
-&lt;p&gt;While it still lacks some features, it works as intended when run on a fresh VM. I hope to add the remaining features in the future.&lt;/p&gt;
-&lt;p&gt;Enough said. Check out my repo and try it yourself!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/ulrik-vj/cis18-benchmarks-ubuntu-debian-ig1&#34;&gt;Link to CIS 18 ubuntu 22 / Debian 11 IG1 script repo &lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
         
         </channel>
 </rss>

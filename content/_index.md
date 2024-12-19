@@ -3,11 +3,10 @@ title = "Home"
 draft = false
 +++
 
-# Introduction
-Hi, i'm Ulrik and this is my webpage. I have been looking for a bare minimum webpage design, where i can use markdown and highlight code. And here it is, thanks to Hugo and no-js-hugo-theme. No complexity or advanced looks, just simple static websites 😃
+Hi, I'm Ulrik, and welcome to my webpage!
 
-Here you can see my latest post about some of the things i do in my free time. Such as homelab, linux related work or school projects.
+I've been looking for a simple design where I can use Markdown and highlight code effectively, and here it is—thanks to Hugo and the no-js-hugo theme, with a little personal touch from me 😃
 
-Thanks for stopping by.
+On this site, you'll find my latest posts about things I work on to showcase my skills, like my homelab projects and scripting.
 
-
+Thanks for stopping by!

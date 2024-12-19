@@ -1,48 +1,105 @@
 {{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
 {{ define "main" }}
   {{ .Content }}
-  <div class="title-header">
-    <h1>{{ .Title }}</h1>
+  {{ if gt ( len ( where .Site.RegularPages "Section" "posts" )) 0 }}
+    <h2>All blogposts</h2>
+    {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") 4 }}
+    <div class="post-list">
+      {{ range $paginator.Pages }}
+        <article class="all-list post-box">
+          <div class="post-content">
+            {{ if .Params.banner }}
+              <div class="post-banner">
+                <a href="{{ .RelPermalink }}">
+                  <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }} Banner" />
+                </a>
+              </div>
+            {{ end }}
+            <div class="title-list">
+              <h3><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h3>
+              <div class="title-list-date">
+                {{ if eq .Date.IsZero false }}
+                  <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
+                {{ end }}
+                {{ if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
+                  (updated)
+                {{ end }}
+              </div>
+              {{ $tags := .Params.tags }} <!-- Get the tags -->
+{{ if $tags }} <!-- Check if there are any tags -->
+  {{ $filteredTags := (slice) }} <!-- Initialize an empty slice for filtered tags -->
+  <div class="post-tags">
+    <span class="post-tags-label">🏷️ Tags: </span> <!-- Display the "Tags" label with the same style -->
+    {{ range $tags }} <!-- Iterate over the tags -->
+      {{ if ne . "latest" }} <!-- Check if the tag is not "latest" -->
+        {{ $filteredTags = $filteredTags | append . }} <!-- Append to filtered tags -->
+      {{ end }}
+    {{ end }}
+    {{ if $filteredTags }} <!-- Check if there are any filtered tags -->
+      <span>{{ delimit $filteredTags ", " }}</span> <!-- Display filtered tags -->
+    {{ end }}
   </div>
-  {{- if gt (len .Sections) 0 }}
-  <h2>Categories</h2>
-    <ul class="section-list">
-    {{- range .Sections }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{- end }}
-    </ul>
-  <h2>All Posts</h2>
-  {{- end }}
-  {{- $cs := .CurrentSection }}
-  {{- with $cs }}
-    {{- range (where .Site.RegularPages "Section" .Section) }}
-      {{- if .IsDescendant $cs }}
-  <article class="all-list">
-    <div class="title-list">
-      <h3><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h3>
-      <div class="title-list-date">
-        {{- if eq .Date.IsZero false }}
-          <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
-        {{- end }}
-        {{- if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
-          (updated)
-        {{- end }}
-      </div>
+{{ end }}
+  </div>
+             <div class="body-list">
+              <p></p>
+              <p>{{ .Summary | truncate 230 }}</p>
+              {{ if .Truncated }}
+                <a href="{{ .RelPermalink }}">Read More…</a>
+              {{ end }}
+            </div>
+          </div>
+        </article>
+      {{ end }}
     </div>
-    <div class="body-list">
-      <p></p> {{/* Spacing is weird if we don't include this */}}
-      <p>
-        {{ .Summary }}
-      </p>
-      {{- if .Truncated }}
-        <a href="{{ .RelPermalink }}">Read More…</a>
-      {{- end }}
-    </div>
-  </article>
-      {{- end }}
-    {{- end }}
-  {{- end }}
+<!-- Pagination -->
+<ul class="pagination" style="display: flex; justify-content: center; list-style-type: none; padding: 0; margin: 50px 0 1px 0;">
+
+  
+  <!-- Previous Arrow -->
+  {{ if $paginator.HasPrev }}
+    <li style="margin: 0 5px;">
+      <a href="{{ $paginator.Prev.URL }}"
+         style="display: block; width: 30px; height: 30px; line-height: 30px; text-align: center; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333; text-decoration: none;">
+        ←
+      </a>
+    </li>
+  {{ end }}
+<!-- Pagination Numbers (for pages) -->
+{{ range $i := seq 1 $paginator.TotalPages }}
+  {{ if eq $i 1 }}
+    <li style="margin: 0 5px;">
+      <a href="/posts/"
+         {{ if eq $i $paginator.PageNumber }}class="pagination-active"{{ end }}
+         style="display: block; width: 30px; height: 30px; line-height: 30px; text-align: center; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333; text-decoration: none;">
+        {{ $i }}
+      </a>
+    </li>
+  {{ else }}
+    <li style="margin: 0 5px;">
+      <a href="/posts/page/{{ $i }}/"
+         {{ if eq $i $paginator.PageNumber }}class="pagination-active"{{ end }}
+         style="display: block; width: 30px; height: 30px; line-height: 30px; text-align: center; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333; text-decoration: none;">
+        {{ $i }}
+      </a>
+    </li>
+  {{ end }}
 {{ end }}
 
+  <!-- Next Arrow -->
+  {{ if $paginator.HasNext }}
+    <li style="margin: 0 5px;">
+      <a href="{{ $paginator.Next.URL }}"
+         style="display: block; width: 30px; height: 30px; line-height: 30px; text-align: center; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333; text-decoration: none;">
+        →
+      </a>
+    </li>
+  {{ end }}
 
+</ul>
+{{ else }}
 
+<p>No blog posts avaible at the moment. Come back later</p>
+
+{{ end }}
+{{ end }}

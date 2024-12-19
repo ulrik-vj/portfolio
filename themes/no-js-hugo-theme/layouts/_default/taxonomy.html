@@ -1,0 +1,78 @@
+{{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+{{ .Content }}
+  <h1>{{ .Title }}</h1>
+  {{ if gt (len .Pages) 0 }}
+    {{ if eq .Kind "taxonomy" }}
+  <div class="post-list">
+      {{ range $index, $page := .Pages }}
+      <article class="post-tags" style="width: 20%; text-align: center; border: 1px solid #ccc; padding: 5px; margin: 10px;">
+        <div class="post-tags" style="padding: 0; margin: 0;">
+          <div class="title-list" style="padding: 0; margin: 0;">
+            <h3 style="margin: 0; padding: 0;">
+              <a href="{{ $page.RelPermalink }}" style="text-decoration: none;">
+                {{ if $page.Draft }}<i>(Draft)</i> {{ end }}{{ $page.Title }}
+              </a>
+            </h3>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ else }}
+      <div class="post-list">
+        {{ range .Pages }}
+          <article class="all-list post-box">
+            <div class="post-content">
+              {{ if .Params.banner }}
+                <div class="post-banner">
+                  <a href="{{ .RelPermalink }}">
+                    <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }} Banner" />
+                  </a>
+                </div>
+              {{ end }}
+              <div class="title-list">
+                <h3><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h3>
+                <div class="title-list-date">
+                  {{ if eq .Date.IsZero false }}
+                    <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
+                  {{ end }}
+                  {{ if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
+                    (updated)
+                  {{ end }}
+                </div>
+
+                {{ $tags := .Params.tags }} <!-- Get the tags -->
+                {{ if $tags }} <!-- Check if there are any tags -->
+                  <div class="post-tags">
+                    <span class="post-tags-label">🏷️ Tags: </span>
+                    {{ range $tags }}
+                     {{ if ne . "latest" }} <!-- Exclude the "latest" tag -->
+  						<span class="tag-link">{{ . }}</span>
+					{{ end }}
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </div>
+
+              <div class="body-list">
+                <p></p>
+                <p>{{ .Summary | truncate 230 }}</p>
+                {{ if .Truncated }}
+                  <a href="{{ .RelPermalink }}">Read More…</a>
+                {{ end }}
+              </div>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ else }}
+    <p>No tags found for any posts.</p>
+  {{ end }}
+{{ end }}
+
+
+
+

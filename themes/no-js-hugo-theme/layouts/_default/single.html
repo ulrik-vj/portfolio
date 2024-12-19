@@ -1,5 +1,10 @@
 {{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
 {{ define "main" }}
+{{ if .Params.banner }} <!-- Check if banner exists -->
+          <div class="post-banner">
+            <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }} Banner" />
+          </div>
+        {{ end }}
   <div class="title-header">
     <h1>{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</h1>
     <div class="title-header-date">
@@ -10,6 +15,21 @@
         &mdash; last updated <time>{{ .Lastmod.Format "January 2, 2006" }}</time>
       {{- end }}
     </div>
+    {{ $tags := .Params.tags }} <!-- Get the tags -->
+{{ if $tags }} <!-- Check if there are any tags -->
+  {{ $filteredTags := (slice) }} <!-- Initialize an empty slice for filtered tags -->
+  <div class="post-tags">
+    <span class="post-tags-label">🏷️ Tags: </span> <!-- Display the "Tags" label with the same style -->
+    {{ range $tags }} <!-- Iterate over the tags -->
+      {{ if ne . "latest" }} <!-- Check if the tag is not "latest" -->
+        {{ $filteredTags = $filteredTags | append . }} <!-- Append to filtered tags -->
+      {{ end }}
+    {{ end }}
+    {{ if $filteredTags }} <!-- Check if there are any filtered tags -->
+      <span>{{ delimit $filteredTags ", " }}</span> <!-- Display filtered tags -->
+    {{ end }}
+  </div>
+{{ end }}
   </div>
   {{ if or (.Params.toc) (and (ne .Params.toc false) (isset .Site.Params "tocwordthreshold") (ge .Site.Params.TocWordThreshold 0) (gt .WordCount .Site.Params.TocWordThreshold)) }}
     {{/* If the front matter parameter is true, show the toc */}}
@@ -30,3 +50,5 @@
   {{ end }}
   {{ .Content | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" (printf "${1}<a href=\"#${2}\" class=\"heading-anchor\" aria-label=\"Anchor\"><img src=\"%s\" class=\"color-adapting-image\" height=\"20\"></a>${3}" ("images/chain-link.svg" | relURL)) | safeHTML }}
 {{ end }}
+
+

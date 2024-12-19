@@ -1,15 +1,16 @@
-baseurl: "https://ulrikvinther.tech/"
-title: "Ulrik's Webpage"
+baseurl: "https://ulrik-vj.github.io/"
+title: "Ulrik's portfolio"
 languageCode: "en-UK"
-theme: "no-js-hugo-theme"
+theme: ["no-js-hugo-theme"]
 enableEmoji: true
 publishDir: "public"
-
+pagination.pagerSize: 4
+capitalizeListTitles: false
 params:
   themeStyleSwitcher: true
   themeStyle: "dark.css"
-  footerText: "Ulriks webpage @2023"
-
+  footerText: "Ulriks webpage @2024"
+  summaryLength: 10
 markup:
   highlight:
     codeFences: true
@@ -28,7 +29,12 @@ menu:
       name: "Posts"
       url: "/posts/"
       weight: -110
+    - identifier: "tags"
+      name: "Tags"
+      url: "/tags/"
+      weight: -100
     - identifier: "about"
       name: "About"
       url: "/about/"
-      weight: -100
+      weight: -90 
+   

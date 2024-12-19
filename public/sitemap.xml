@@ -2,20 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ulrikvinther.tech/posts/post3_cis18_ubuntu22_debian11_script_ig1/</loc>
-    <lastmod>2023-11-21T21:59:02+01:00</lastmod>
-  </url><url>
-    <loc>https://ulrikvinther.tech/</loc>
-    <lastmod>2023-11-21T21:59:02+01:00</lastmod>
-  </url><url>
-    <loc>https://ulrikvinther.tech/posts/</loc>
-    <lastmod>2023-11-21T21:59:02+01:00</lastmod>
-  </url><url>
-    <loc>https://ulrikvinther.tech/about/</loc>
+    <loc>https://ulrik-vj.github.io/</loc>
     <lastmod>2023-03-16T10:41:31+01:00</lastmod>
   </url><url>
-    <loc>https://ulrikvinther.tech/categories/</loc>
+    <loc>https://ulrik-vj.github.io/tags/</loc>
+    <lastmod>2023-03-16T10:41:31+01:00</lastmod>
   </url><url>
-    <loc>https://ulrikvinther.tech/tags/</loc>
+    <loc>https://ulrik-vj.github.io/about/</loc>
+  </url><url>
+    <loc>https://ulrik-vj.github.io/categories/</loc>
+  </url><url>
+    <loc>https://ulrik-vj.github.io/posts/</loc>
   </url>
 </urlset>

@@ -1,3 +1,3 @@
 # UVJ portfolio
 
-Link to my portfolio **[ulrikvinther.tech](https://ulrikvinther.tech)**.
+Link to my portfolio **[ulrik-vj.github.io](https://ulrik-vj.github.io)**.

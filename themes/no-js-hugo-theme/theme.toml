@@ -7,3 +7,5 @@ min_version = "0.38"
 
 [author]
   name = "Steven Engler"
+[params]
+  summaryLength = 10  # Number of words for the summary

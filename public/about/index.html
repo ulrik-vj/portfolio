@@ -3,10 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>About &ndash; Ulrik&#39;s Webpage</title>
+	<title>About &ndash; Ulrik&#39;s portfolio</title>
 	<link rel="stylesheet" href="/css/styles.css">
 	<link id="theme_css" rel="stylesheet" href="/css/themes/dark.css">
 	<script src="/js/theme-switcher.js"></script>
+        <script src="/js/copy-button.js"></script>
 </head>
 <body>
 	<input class="show-hide-menu-input" style="display:none;" autocomplete="off" type="checkbox" id="toggle-1">
@@ -14,7 +15,7 @@
 		<div class="header">
 			<div class="header-content">
 				<div class="title">
-					<a href="https://ulrikvinther.tech/">Ulrik&#39;s Webpage</a>
+					<a href="https://ulrik-vj.github.io/">Ulrik&#39;s portfolio</a>
 				</div>
 				<div>
 					<div class="header-right">
@@ -32,6 +33,7 @@
 					<ul class="links">
 						<li><a href="/">Home</a></li>
 						<li><a href="/posts/">Posts</a></li>
+						<li><a href="/tags/">Tags</a></li>
 						<li><a href="/about/">About</a></li>
 					</ul>
 				</div>
@@ -39,17 +41,38 @@
 		</div>
 		<div class="body">
 			<div class="body-content">
+
   <div class="title-header">
     <h1>About</h1>
     <div class="title-header-date">
-        <time>Thursday, March 16, 2023</time>
     </div>
+     
+
   </div>
   
-  <p>This site is intended for sharing knowledge and projects i&rsquo;m working on.</p>
-<p>Right now i run my servers on a couple of old scrappy laptops. Which as worse as it sounds, is still a great way to start getting into homelab and how i got started. And i have learned quite a lot about Proxmox just this way.
-I hope to expand in the future, implementing more advanced tech gear to the lab, such as a rack server or UPS.</p>
-<p>My setup consist of a PFsense homebuilt router, 2 Proxmox servers, one as Hypervisor and another as backup. In my hypervisor i run services such as Wazuh for monitoring my devices, an Openmediavault NAS server to manage storage, and with docker a few docker containers (Such as Jellyfin, Kanboard, Dashy, netbox, nginxproxymanager).</p>
+  <p>This site features a collection of my work, focusing on virtualization, cybersecurity, scripting, and Linux technologies.</p>
+<h1 id="my-setup">My setup<a href="#my-setup" class="heading-anchor" aria-label="Anchor"><img src="/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
+<p>I run a network built around Proxmox and PFsense, with the following components:</p>
+<blockquote>
+<p>PFsense Router: For network management and security.</p>
+</blockquote>
+<blockquote>
+<p>Proxmox Servers: One as the main hypervisor and the other as a backup.</p>
+</blockquote>
+<blockquote>
+<p>Managed switch: For network segmentation and Port mirroring</p>
+</blockquote>
+<p>Services on Proxmox Hypervisor</p>
+<blockquote>
+<p>UniFi: Network management.</p>
+</blockquote>
+<blockquote>
+<p>NFS Server: For network storage</p>
+</blockquote>
+<blockquote>
+<p>Docker Containers: Running services like Dashy for dashboard to reach services, Netbox for device documentation, Nginx Proxy Manager as reverse proxy, and Nextcloud for private &ldquo;cloud&rdquo; service.</p>
+</blockquote>
+<p>Feel free to explore my projects.</p>
 
 
 			</div>
@@ -57,11 +80,10 @@ I hope to expand in the future, implementing more advanced tech gear to the lab,
 	</div>
     <hr class="dont-show">
     <div class="footer">
-        <p>Ulriks webpage @2023</p>
+        <p>Ulriks webpage @2024</p>
         <a href="/index.xml"><img src="/images/rss.svg" style="max-height:1.5em" alt="RSS Feed" title="Subscribe via RSS for updates."></a>
-        <a href="https://github.com/ulrik-vj" target="_blank" rel="noopener noreferrer">
-            <img src="/images/github.png" style="max-height:1.5em" alt="GitHub" title="Visit GitHub">
-        </a>
+        <a href="https://github.com/ulrik-vj" target="_blank" rel="noopener noreferrer"><img src="/images/github.png" style="max-height:1.5em" alt="GitHub" title="Visit GitHub"></a>
+        <a href="https://www.linkedin.com/in/uvj/" target="_blank" rel="noopener noreferrer"><img src="/images/linkedin.png" style="max-height:1.5em" alt="Linkedin" title="Visit my linkedin"></a>
     </div>
 
 </body>

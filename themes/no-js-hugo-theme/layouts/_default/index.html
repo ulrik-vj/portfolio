@@ -1,0 +1,48 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ if gt ( len ( where .Site.RegularPages "Section" "posts" )) 0 }}
+    <h2>Recent Posts</h2>
+    {{ range first 2 ( where .Site.RegularPages "Section" "posts" ) }}
+      <article class="all-list post-box">
+         {{ if .Params.banner }} <!-- Check if banner exists -->
+          <div class="post-banner">
+          <a href="{{ .RelPermalink }}"> <!-- Make the image clickable -->
+            <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }} Banner" />
+          </div>
+        {{ end }}
+        <div class="title-list">
+          <h3><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h3>
+          <div class="title-list-date">
+            {{ if eq .Date.IsZero false }}
+              <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
+            {{ end }}
+            {{ if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
+              (updated)
+            {{ end }}
+          </div>
+          {{ $tags := .Params.tags }} <!-- Get the tags -->
+  {{ if $tags }} <!-- Check if there are any tags -->
+    {{ $filteredTags := (slice) }} <!-- Initialize an empty slice for filtered tags -->
+    {{ range $tags }} <!-- Iterate over the tags -->
+      {{ if ne . "latest" }} <!-- Check if the tag is not "latest" -->
+        {{ $filteredTags = $filteredTags | append . }} <!-- Append to filtered tags -->
+      {{ end }}
+    {{ end }}
+    {{ if $filteredTags }} <!-- Check if there are any filtered tags -->
+      <div class="post-tags">{{ delimit $filteredTags ", " }}</div> <!-- Display filtered tags in a new block -->
+    {{ end }}
+  {{ end }}
+        </div>
+        <div class="body-list">
+          <p></p> {{/* Spacing is weird if we don't include this */}}
+          <p>
+            {{ .Summary | truncate 50 }}
+          </p>
+          {{ if .Truncated }}
+            <a href="{{ .RelPermalink }}">Read More…</a>
+          {{ end }}
+        </div>
+      </article>
+    {{ end }}
+  {{ end }}
+{{ end }}
