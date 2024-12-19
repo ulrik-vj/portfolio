@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/portfolio/</loc>
+    <loc>https://ulrik-vj.github.io/portfolio/</loc>
     <lastmod>2023-03-16T10:41:31+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/portfolio/tags/</loc>
+    <loc>https://ulrik-vj.github.io/portfolio/tags/</loc>
     <lastmod>2023-03-16T10:41:31+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/portfolio/about/</loc>
+    <loc>https://ulrik-vj.github.io/portfolio/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/portfolio/categories/</loc>
+    <loc>https://ulrik-vj.github.io/portfolio/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/portfolio/posts/</loc>
+    <loc>https://ulrik-vj.github.io/portfolio/posts/</loc>
   </url>
 </urlset>
