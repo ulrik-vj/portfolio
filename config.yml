@@ -11,7 +11,6 @@ params:
   themeStyle: "dark.css"
   footerText: "Ulriks webpage @2024"
   summaryLength: 10
-  favicon: https://ulrik-vj.github.io/portfolio/favicon.ico
 markup:
   highlight:
     codeFences: true
