@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-UK">
+<head><script src="/portfolio/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=portfolio/livereload" data-no-instant defer></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Post1_nodeexporter_prometheus_harden_guide &ndash; Ulrik&#39;s portfolio</title>
+        <link rel="icon" href="http://localhost:1313/portfolio/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/portfolio/css/styles.css">
+	<link id="theme_css" rel="stylesheet" href="/portfolio/css/themes/dark.css">
+	<script src="/portfolio/js/theme-switcher.js"></script>
+        <script src="/portfolio/js/copy-button.js"></script>
+</head>
+<body>
+	<input class="show-hide-menu-input" style="display:none;" autocomplete="off" type="checkbox" id="toggle-1">
+	<div class="main">
+		<div class="header">
+			<div class="header-content">
+				<div class="title">
+					<a href="http://localhost:1313/portfolio/">Ulrik&#39;s portfolio</a>
+				</div>
+				<div>
+					<div class="header-right">
+						<div id="change-theme-button" style="display:none;" class="clickable-header-label" onclick="toggle_theme()">
+							<img class="color-adapting-image" width="30" src="" alt="change theme button">
+						</div>
+					    <label id="show-hide-menu-label" class="clickable-header-label" for="toggle-1">
+							<img class="color-adapting-image" width="30" src="/portfolio/images/hamburger.svg" alt="menu button">
+						</label>
+					</div>
+					<label class="overlay" for="toggle-1"></label>
+					<div class="dont-show">
+						Links:
+					</div>
+					<ul class="links">
+						<li><a href="/portfolio/">Home</a></li>
+						<li><a href="/portfolio/posts/">Posts</a></li>
+						<li><a href="/portfolio/tags/">Tags</a></li>
+						<li><a href="/portfolio/about/">About</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="body-content">
+ 
+          <div class="post-banner">
+            <img src="/portfolio/%7b%7b%20.Site.BaseURL%20%7d%7dimages/CHANGEME.png" alt="Post1_nodeexporter_prometheus_harden_guide Banner" />
+          </div>
+        
+  <div class="title-header">
+    <h1>Post1_nodeexporter_prometheus_harden_guide</h1>
+    <div class="title-header-date">
+        <time>Tuesday, December 17, 2024</time>
+    </div>
+     
+
+  </div>
+  
+  <p>When using highlight or code block. Make sure your lines are within the limit lenght limit. Else copy button will be a little wierd and now follow to the end of the code block from the corner. Until a fix, a dirty fix is just start a newline when it exceedes lenght limit, which will make a scroll bar :)</p>
+<h1 id="banner-img-for-posts">BANNER IMG for POSTS<a href="#banner-img-for-posts" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
+<p>Move picture to /images in the hugo folder. Change the path in the banner variable in top of the post</p>
+<p>banner = &ldquo;{{ .Site.BaseURL }}images/IMGTITLE.png&rdquo;</p>
+<h1 id="images">images<a href="#images" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
+<p>Move picture to /images in hugo folder. Add this to line where you want to add picture:</p>
+<figure><img src="%7B%7B%20.Site.BaseURL%20%7D%7Dimages/YOUR_PIC_FILENAME.jpg"><figcaption>
+      <h4>YOUR_PIC_TITLE</h4>
+    </figcaption>
+</figure>
+
+<h1 id="code-and-highlighting">CODE and highlighting<a href="#code-and-highlighting" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
+<p>Normal code show</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;hello world&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>With highlighting (DO NOT USE YET. Needs a fix in CSS):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="hl"><span class="lnt">201
+</span></span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">)</span>
+</span></span><span class="line hl"><span class="cl"><span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;bro&#34;</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>where:</p>
+<ul>
+<li>
+<p>linenostart = START OF LINES like this starts from line 199.</p>
+</li>
+<li>
+<p>lineos = what lines lines do you want to hightlight ?</p>
+</li>
+</ul>
+<p>An example for how this could look is this</p>
+<p><img src="image.png" alt="alt text"></p>
+<p>NOTE:</p>
+<p>When using highlight or code block. Make sure your lines are within the limit lenght limit. Else copy button will be a little wierd and now follow to the end of the code block from the corner. Until a fix, a dirty fix is just start a newline when it exceedes lenght limit, which will make a scroll bar :)</p>
+<h1 id="notice">Notice<a href="#notice" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
+<p>You can use these 3 for marking notice blocks:</p>
+<ul>
+<li>warning</li>
+<li>tip</li>
+<li>note</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><aside class="notice warning">
+	<hr>
+	<div class="notice-title">
+		<img class="notice-title-icon" src="/portfolio/images/exclamation.svg" height="15">
+		<span>Warning</span>
+	</div>
+	<div class="notice-body">Duis placerat scelerisque ligula, at cursus neque sollicitudin pretium. Nullam et consectetur quam, et commodo pretium!</div>
+	<hr>
+</aside>
+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><aside class="notice tip">
+	<hr>
+	<div class="notice-title">
+		<img class="notice-title-icon" src="/portfolio/images/exclamation.svg" height="15">
+		<span>Tip</span>
+	</div>
+	<div class="notice-body">Duis placerat scelerisque ligula, at cursus neque sollicitudin pretium. Nullam et consectetur quam, et commodo pretium!</div>
+	<hr>
+</aside>
+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><aside class="notice note">
+	<hr>
+	<div class="notice-title">
+		<img class="notice-title-icon" src="/portfolio/images/exclamation.svg" height="15">
+		<span>Note</span>
+	</div>
+	<div class="notice-body">Duis placerat scelerisque ligula, at cursus neque sollicitudin pretium. Nullam et consectetur quam, et commodo pretium!</div>
+	<hr>
+</aside>
+
+</span></span></code></pre></div><p>They will look like this so you can chose what you like:</p>
+<p><img src="image-1.png" alt="alt text"></p>
+<h1 id="links">LINKS<a href="#links" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
+<p>Make links like this if you want to change the URL title on the page</p>
+<p><a href="https://daringfireball.net/projects/markdown/">Markdown</a></p>
+<p>Else copy paste the URL directly in.</p>
+<h1 id="general-markdown-help">general markdown help<a href="#general-markdown-help" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
+<p>For other thing like tables or other formatiing see:</p>
+<p><a href="https://www.markdownguide.org/cheat-sheet/">https://www.markdownguide.org/cheat-sheet/</a></p>
+
+
+			</div>
+		</div>
+	</div>
+    <hr class="dont-show">
+    <div class="footer">
+        <p>Ulriks webpage @2024</p>
+        <a href="http://localhost:1313/portfolio/index.xml"><img src="http://localhost:1313/portfolio/images/rss.svg" style="max-height:1.5em" alt="RSS Feed" title="Subscribe via RSS for updates."></a>
+        <a href="https://github.com/ulrik-vj" target="_blank" rel="noopener noreferrer"><img src="http://localhost:1313/portfolio/images/github.png" style="max-height:1.5em" alt="GitHub" title="Visit GitHub"></a>
+        <a href="https://www.linkedin.com/in/uvj/" target="_blank" rel="noopener noreferrer"><img src="http://localhost:1313/portfolio/images/linkedin.png" style="max-height:1.5em" alt="Linkedin" title="Visit my linkedin"></a>
+    </div>
+
+</body>
+</html>

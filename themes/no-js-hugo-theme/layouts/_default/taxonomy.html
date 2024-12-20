@@ -2,9 +2,9 @@
 
 {{ define "main" }}
 {{ .Content }}
-  <h1>{{ .Title }}</h1>
   {{ if gt (len .Pages) 0 }}
     {{ if eq .Kind "taxonomy" }}
+  <h1>{{ .Title }}</h1>
   <div class="post-list">
       {{ range $index, $page := .Pages }}
       <article class="post-tags" style="width: 20%; text-align: center; border: 1px solid #ccc; padding: 5px; margin: 10px;">

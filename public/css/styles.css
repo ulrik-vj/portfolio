@@ -307,7 +307,7 @@ blockquote {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  overflow: hidden;
+
   -webkit-overflow-scrolling: touch; /* This needs to go here for some reason KIG OM SKAL FJERNES*/
 }
 
