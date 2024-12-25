@@ -21,7 +21,7 @@ Services on Proxmox Hypervisor
 
 > NFS Server: For network storage
 
-> Docker Containers: Running services like Dashy for dashboard to reach internal services, Nginx Proxy Manager as reverse proxy, and Nextcloud for private "cloud" service.
+> Docker Containers: Running services like Dashy for dashboard to reach internal services, such as Nginx Proxy Manager for a reverse proxy and Nextcloud for private "cloud" service.
 
 Feel free to explore my projects.
 
