@@ -3,7 +3,7 @@ title: "About"
 draft: false
 ---
 
-This site features a collection of my work, focusing on virtualization, cybersecurity, scripting, and Linux technologies.
+This site features a collection of my work, focusing on virtualization, cybersec, scripting, and Linux related.
 
 # My setup
 
