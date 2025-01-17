@@ -6,7 +6,7 @@ banner = "/portfolio/images/post_banner.png"
 tags = ["Linux", "Proxmox", "Automation"]
 +++
 
-Incase of updates for node-exporter and prometheus exporter (for proxmox), it can be a hassle to go through every single machine and force a update via. pip or docker.
+Incase of updates for node-exporter and prometheus exporter (for proxmox), it can be a hassle to go through every single machine and force a update.
 A way to make it easier to administrate we can use Ansible.
 
 # The ansible playbook
