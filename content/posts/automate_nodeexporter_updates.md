@@ -55,7 +55,7 @@ In the pictures below im running the playbook in my lab, to update my Promox hos
 
 {{< figure src="/portfolio/images/nodexporter_second.png" title="Second part of demo" >}}
 
-## How to run it with Github example
+## How to run Github example
 
 To view an example structure of the playbook, see github repo:
 
