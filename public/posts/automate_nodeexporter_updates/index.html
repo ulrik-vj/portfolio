@@ -109,13 +109,13 @@ A way to make it easier to administrate we can use Ansible.</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname not in excluded_ips and shell_result is defined</span><span class="w">
 </span></span></span></code></pre></div><p>The playbook simply does:</p>
 <ol>
-<li>Load IPs from excluded IPs file and save those, so the palybook can filter them out later if they dont need update (EG. Host does not use node-exporter).</li>
-<li>Update prometheus on the proxmox host, with PIP by looking for only a specific IP from the hosts file (Your proxmox host IP)</li>
+<li>Load IPs from excluded IPs file and save those, so the playbook can filter them out later if they dont need update (e.g., host does not use node-exporter).</li>
+<li>Update prometheus on the proxmox host, with pip by looking for only a specific IP from the hosts file (Your proxmox host IP)</li>
 <li>Update all servers from hosts file, with a <a href="https://github.com/ulrik-vj/ansible-playbooks/blob/main/nodeexporter/scripts/update-nodeexporter.sh">Custom bash script</a> that fetches latests node exporter binary file and replace the previous one on the server. Here the excluded IPs are being used. If IP is present from hosts file and also in the excluded file, it will skip that IP.</li>
 <li>Output from custom bash script, in case you want to see results.</li>
 </ol>
 <h2 id="script-example-during-a-run">Script example during a run<a href="#script-example-during-a-run" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h2>
-<p>In the pictures below im running the playbook in my lab, to update my Promox host and VMs:</p>
+<p>In the pictures below im running the playbook in my lab, to update my Proxmox host and VMs:</p>
 <figure><img src="/portfolio/images/nodexporter_first.png"><figcaption>
       <h4>First part of demo</h4>
     </figcaption>
