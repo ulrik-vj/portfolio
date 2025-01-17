@@ -9,7 +9,7 @@ capitalizeListTitles: false
 params:
   themeStyleSwitcher: true
   themeStyle: "dark.css"
-  footerText: "Ulriks webpage @2024"
+  footerText: "Ulriks webpage @2025"
   summaryLength: 10
 markup:
   highlight:

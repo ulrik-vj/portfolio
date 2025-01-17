@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ulrik-vj.github.io/portfolio/posts/automate_nodeexporter_updates/</loc>
+    <lastmod>2025-01-16T23:19:01+01:00</lastmod>
+  </url><url>
+    <loc>https://ulrik-vj.github.io/portfolio/tags/automation/</loc>
+    <lastmod>2025-01-16T23:19:01+01:00</lastmod>
+  </url><url>
     <loc>https://ulrik-vj.github.io/portfolio/</loc>
-    <lastmod>2023-03-16T10:41:31+01:00</lastmod>
+    <lastmod>2025-01-16T23:19:01+01:00</lastmod>
+  </url><url>
+    <loc>https://ulrik-vj.github.io/portfolio/tags/linux/</loc>
+    <lastmod>2025-01-16T23:19:01+01:00</lastmod>
+  </url><url>
+    <loc>https://ulrik-vj.github.io/portfolio/posts/</loc>
+    <lastmod>2025-01-16T23:19:01+01:00</lastmod>
+  </url><url>
+    <loc>https://ulrik-vj.github.io/portfolio/tags/proxmox/</loc>
+    <lastmod>2025-01-16T23:19:01+01:00</lastmod>
   </url><url>
     <loc>https://ulrik-vj.github.io/portfolio/tags/</loc>
     <lastmod>2023-03-16T10:41:31+01:00</lastmod>
@@ -11,7 +26,5 @@
     <loc>https://ulrik-vj.github.io/portfolio/about/</loc>
   </url><url>
     <loc>https://ulrik-vj.github.io/portfolio/categories/</loc>
-  </url><url>
-    <loc>https://ulrik-vj.github.io/portfolio/posts/</loc>
   </url>
 </urlset>
