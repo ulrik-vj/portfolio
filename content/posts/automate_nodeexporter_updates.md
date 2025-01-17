@@ -36,7 +36,7 @@ A way to make it easier to administrate we can use Ansible.
       when: inventory_hostname not in excluded_ips  # Exclude hosts from the list
       register: shell_result
 
-    - name: Output the result of the script.
+    - name: Output the result of the script
       debug:
         var: shell_result.stdout_lines
       when: inventory_hostname not in excluded_ips and shell_result is defined
