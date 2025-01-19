@@ -80,7 +80,8 @@
   <p>Incase of updates for node-exporter and prometheus exporter (for proxmox), it can be a hassle to go through every single machine and force a update for the node exporter binary files.
 A way to make it easier to administrate we can use Ansible.</p>
 <h1 id="the-ansible-playbook">The ansible playbook<a href="#the-ansible-playbook" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Run custom script and upgrade pip on specific host</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Run custom script and upgrade pip on specific host</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">servers </span><span class="w"> </span><span class="c"># Applies to all hosts in the &#39;servers&#39; group</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">gather_facts</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
@@ -111,7 +112,8 @@ A way to make it easier to administrate we can use Ansible.</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Output the result of the script</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">debug</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l">shell_result.stdout_lines</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname not in excluded_ips and shell_result is defined                                                                 </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname not in excluded_ips and shell_result is defined</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      
 </span></span></span></code></pre></div><p>The playbook simply does:</p>
 <ol>
 <li>Load IPs from excluded IPs file and save those, so the playbook can filter them out later if they dont need update (e.g., host does not use node-exporter).</li>

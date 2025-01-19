@@ -12,7 +12,9 @@ A way to make it easier to administrate we can use Ansible.
 
 # The ansible playbook
 
+
 ```yml
+
 - name: Run custom script and upgrade pip on specific host
   hosts: servers  # Applies to all hosts in the 'servers' group
   gather_facts: false
@@ -44,8 +46,10 @@ A way to make it easier to administrate we can use Ansible.
     - name: Output the result of the script
       debug:
         var: shell_result.stdout_lines
-      when: inventory_hostname not in excluded_ips and shell_result is defined                                                                 
+      when: inventory_hostname not in excluded_ips and shell_result is defined
+      
 ```
+
 The playbook simply does:
 
 1. Load IPs from excluded IPs file and save those, so the playbook can filter them out later if they dont need update (e.g., host does not use node-exporter).

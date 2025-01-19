@@ -95,7 +95,7 @@ a:hover {
 
 .highlight td.lntd pre {
   /* needed to fix an iPhone scrolling bug */
-  overflow-x: hidden;
+  overflow-x: unset;
   /* Extra changes to fix width issues and extra code block border */
   border: none;
   padding-left: 0;     /* Remove padding on the left */
@@ -801,7 +801,11 @@ pre {
   border: 1px solid #e1e1e1;
   padding: 16px;
   border-radius: 4px;
-  overflow: auto;
+  overflow-x: auto; /* Horizontal scrollbar only when content exceeds width */
+  overflow-y: visible; /* No vertical scrollbar unless absolutely necessary */
+  word-wrap: break-word; /* Break long words to prevent overflow */
+  max-width: 100%; /* Ensure pre doesn't exceed container width */
+  white-space: pre-wrap; /* Ensures long lines wrap instead of overflowing */
   
 }
 
