@@ -21,6 +21,7 @@
       {{ end }}
     </div>
     {{ else }}
+    <h2>Posts with tag: {{ .Title }}</h2>  <!-- This displays the selected tag name -->
       <div class="post-list">
         {{ range .Pages }}
           <article class="all-list post-box">

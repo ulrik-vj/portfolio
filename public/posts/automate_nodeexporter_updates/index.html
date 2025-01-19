@@ -85,17 +85,22 @@ A way to make it easier to administrate we can use Ansible.</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">gather_facts</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Load excluded IPs from file. See exclude_ips.txt for info</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">set_fact</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">excluded_ips</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ lookup(&#39;file&#39;, &#39;exclude_ips.txt&#39;).splitlines() | default([]) }}&#34;</span><span class="w">  </span><span class="c"># Reads the IPs from the file</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">set_fact</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">excluded_ips</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          {{ lookup(&#39;file&#39;, &#39;exclude_ips.txt&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="sd">             .splitlines() | default([]) }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          # Reads the IPs from the file</span><span class="w">          
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Upgrade promethus node exporter on proxmox host</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">vars</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ansible_become_pass</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ ansible_password }}&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l">/opt/prometheus-pve-exporter/bin/pip install --upgrade prometheus-pve-exporter </span><span class="w"> </span><span class="c"># Replace path, with where your node exporter is installed at.</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname == &#34;192.168.XX.XX&#34;</span><span class="w"> </span><span class="c"># YOUR PROXMOX HOST HERE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">        /opt/prometheus-pve-exporter/bin/pip install --upgrade prometheus-pve-exporter
+</span></span></span><span class="line"><span class="cl"><span class="sd">        # Replace with the desired pip version or binary</span><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname == &#34;192.168.XX.XX&#34; </span><span class="w"> </span><span class="c"># Insert your proxmox ip</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Run custom script on all servers, except specific hosts listed in exclude_ips.txt</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Run custom script on all servers, except hosts listed in exclude_ips.txt</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">vars</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ansible_become_pass</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ ansible_password }}&#34;</span><span class="w">
@@ -106,7 +111,7 @@ A way to make it easier to administrate we can use Ansible.</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Output the result of the script</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">debug</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l">shell_result.stdout_lines</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname not in excluded_ips and shell_result is defined</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname not in excluded_ips and shell_result is defined                                                                 </span><span class="w">
 </span></span></span></code></pre></div><p>The playbook simply does:</p>
 <ol>
 <li>Load IPs from excluded IPs file and save those, so the playbook can filter them out later if they dont need update (e.g., host does not use node-exporter).</li>
