@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Automate node exporter updates for Linux and Proxmox &ndash; Ulrik&#39;s portfolio</title>
-        <link rel="icon" href="https://ulrik-vj.github.io/portfolio/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="/portfolio/css/styles.css">
-	<link id="theme_css" rel="stylesheet" href="/portfolio/css/themes/dark.css">
-	<script src="/portfolio/js/theme-switcher.js"></script>
-        <script src="/portfolio/js/copy-button.js"></script>
+        <link rel="icon" href="https://ulrikvinther.dk/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link id="theme_css" rel="stylesheet" href="/css/themes/dark.css">
+	<script src="/js/theme-switcher.js"></script>
+        <script src="/js/copy-button.js"></script>
 </head>
 <body>
 	<input class="show-hide-menu-input" style="display:none;" autocomplete="off" type="checkbox" id="toggle-1">
@@ -16,7 +16,7 @@
 		<div class="header">
 			<div class="header-content">
 				<div class="title">
-					<a href="https://ulrik-vj.github.io/portfolio/">Ulrik&#39;s portfolio</a>
+					<a href="https://ulrikvinther.dk/">Ulrik&#39;s portfolio</a>
 				</div>
 				<div>
 					<div class="header-right">
@@ -24,7 +24,7 @@
 							<img class="color-adapting-image" width="30" src="" alt="change theme button">
 						</div>
 					    <label id="show-hide-menu-label" class="clickable-header-label" for="toggle-1">
-							<img class="color-adapting-image" width="30" src="/portfolio/images/hamburger.svg" alt="menu button">
+							<img class="color-adapting-image" width="30" src="/images/hamburger.svg" alt="menu button">
 						</label>
 					</div>
 					<label class="overlay" for="toggle-1"></label>
@@ -32,10 +32,10 @@
 						Links:
 					</div>
 					<ul class="links">
-						<li><a href="/portfolio/">Home</a></li>
-						<li><a href="/portfolio/posts/">Posts</a></li>
-						<li><a href="/portfolio/tags/">Tags</a></li>
-						<li><a href="/portfolio/about/">About</a></li>
+						<li><a href="/">Home</a></li>
+						<li><a href="/posts/">Posts</a></li>
+						<li><a href="/tags/">Tags</a></li>
+						<li><a href="/about/">About</a></li>
 					</ul>
 				</div>
 			</div>
@@ -44,7 +44,7 @@
 			<div class="body-content">
  
           <div class="post-banner">
-            <img src="/portfolio/images/post_banner.png" alt="Automate node exporter updates for Linux and Proxmox Banner" />
+            <img src="/images/post_banner.png" alt="Automate node exporter updates for Linux and Proxmox Banner" />
           </div>
         
   <div class="title-header">
@@ -79,7 +79,7 @@
   
   <p>Incase of updates for node-exporter and prometheus exporter (for proxmox), it can be a hassle to go through every single machine and force a update for the node exporter binary files.
 A way to make it easier to administrate we can use Ansible.</p>
-<h1 id="the-ansible-playbook">The ansible playbook<a href="#the-ansible-playbook" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
+<h1 id="the-ansible-playbook">The ansible playbook<a href="#the-ansible-playbook" class="heading-anchor" aria-label="Anchor"><img src="/images/chain-link.svg" class="color-adapting-image" height="20"></a></h1>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Run custom script and upgrade pip on specific host</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">servers </span><span class="w"> </span><span class="c"># Applies to all hosts in the &#39;servers&#39; group</span><span class="w">
@@ -121,19 +121,19 @@ A way to make it easier to administrate we can use Ansible.</p>
 <li>Update all servers from hosts file, with a <a href="https://github.com/ulrik-vj/ansible-playbooks/blob/main/nodeexporter/scripts/update-nodeexporter.sh">Custom bash script</a> that fetches latests node exporter binary file and replace the previous one on the server. Here the excluded IPs are being used. If IP is present from hosts file and also in the excluded file, it will skip that IP.</li>
 <li>Output from custom bash script, in case you want to see results.</li>
 </ol>
-<h2 id="script-example-during-a-run">Script example during a run<a href="#script-example-during-a-run" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h2>
+<h2 id="script-example-during-a-run">Script example during a run<a href="#script-example-during-a-run" class="heading-anchor" aria-label="Anchor"><img src="/images/chain-link.svg" class="color-adapting-image" height="20"></a></h2>
 <p>In the pictures below im running the playbook in my lab, to update my Proxmox host and VMs:</p>
-<figure><img src="/portfolio/images/nodexporter_first.png"><figcaption>
+<figure><img src="/images/nodexporter_first.png"><figcaption>
       <h4>First part of demo</h4>
     </figcaption>
 </figure>
 
-<figure><img src="/portfolio/images/nodexporter_second.png"><figcaption>
+<figure><img src="/images/nodexporter_second.png"><figcaption>
       <h4>Second part of demo</h4>
     </figcaption>
 </figure>
 
-<h2 id="how-to-run-github-example">How to run Github example<a href="#how-to-run-github-example" class="heading-anchor" aria-label="Anchor"><img src="/portfolio/images/chain-link.svg" class="color-adapting-image" height="20"></a></h2>
+<h2 id="how-to-run-github-example">How to run Github example<a href="#how-to-run-github-example" class="heading-anchor" aria-label="Anchor"><img src="/images/chain-link.svg" class="color-adapting-image" height="20"></a></h2>
 <p>To view an example structure of the playbook, see github repo:</p>
 <p><a href="https://github.com/ulrik-vj/ansible-playbooks/tree/main/nodeexporter">Github repo example</a></p>
 
@@ -144,9 +144,9 @@ A way to make it easier to administrate we can use Ansible.</p>
     <hr class="dont-show">
     <div class="footer">
         <p>Ulriks webpage @2025</p>
-        <a href="https://ulrik-vj.github.io/portfolio/index.xml"><img src="https://ulrik-vj.github.io/portfolio/images/rss.svg" style="max-height:1.5em" alt="RSS Feed" title="Subscribe via RSS for updates."></a>
-        <a href="https://github.com/ulrik-vj"><img src="https://ulrik-vj.github.io/portfolio/images/github.png" style="max-height:1.5em" alt="GitHub" title="Visit GitHub"></a>
-        <a href="https://www.linkedin.com/in/uvj/"><img src="https://ulrik-vj.github.io/portfolio/images/linkedin.png" style="max-height:1.5em" alt="Linkedin" title="Visit my linkedin"></a>
+        <a href="https://ulrikvinther.dk/index.xml"><img src="https://ulrikvinther.dk/images/rss.svg" style="max-height:1.5em" alt="RSS Feed" title="Subscribe via RSS for updates."></a>
+        <a href="https://github.com/ulrik-vj"><img src="https://ulrikvinther.dk/images/github.png" style="max-height:1.5em" alt="GitHub" title="Visit GitHub"></a>
+        <a href="https://www.linkedin.com/in/uvj/"><img src="https://ulrikvinther.dk/images/linkedin.png" style="max-height:1.5em" alt="Linkedin" title="Visit my linkedin"></a>
     </div>
 
 </body>

@@ -2,7 +2,7 @@
 title = 'Automate node exporter updates for Linux and Proxmox'
 date = 2025-01-16T23:19:01+01:00
 draft = false
-banner = "/portfolio/images/post_banner.png"
+banner = "/images/post_banner.png"
 tags = ["Linux", "Proxmox", "Automation"]
 +++
 
@@ -61,9 +61,9 @@ The playbook simply does:
 
 In the pictures below im running the playbook in my lab, to update my Proxmox host and VMs:
 
-{{< figure src="/portfolio/images/nodexporter_first.png" title="First part of demo" >}}
+{{< figure src="/images/nodexporter_first.png" title="First part of demo" >}}
 
-{{< figure src="/portfolio/images/nodexporter_second.png" title="Second part of demo" >}}
+{{< figure src="/images/nodexporter_second.png" title="Second part of demo" >}}
 
 ## How to run Github example
 
