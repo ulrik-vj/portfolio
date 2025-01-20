@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
         <title>Ulrik&#39;s portfolio</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://ulrikvinther.dk/categories/</link>
         <description>Recent content in categories on Ulrik&#39;s portfolio</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-UK</language>
     
-        <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://ulrikvinther.dk/categories/index.xml" rel="self" type="application/rss+xml" />
         
         
         <item>
                 <title>Automate node exporter updates for Linux and Proxmox</title>
-                <link>http://localhost:1313/posts/automate_nodeexporter_updates/</link>
+                <link>https://ulrikvinther.dk/posts/automate_nodeexporter_updates/</link>
                 <pubDate>Thu, 16 Jan 2025 23:19:01 +0100</pubDate>
                 
-                <guid>http://localhost:1313/posts/automate_nodeexporter_updates/</guid>
+                <guid>https://ulrikvinther.dk/posts/automate_nodeexporter_updates/</guid>
                 <description>&lt;p&gt;Incase of updates for node-exporter and prometheus exporter (for proxmox), it can be a hassle to go through every single machine and force a update for the node exporter binary files.
 A way to make it easier to administrate we can use Ansible.&lt;/p&gt;
 &lt;h1 id=&#34;the-ansible-playbook&#34;&gt;The ansible playbook&lt;/h1&gt;
@@ -61,12 +61,12 @@ A way to make it easier to administrate we can use Ansible.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;script-example-during-a-run&#34;&gt;Script example during a run&lt;/h2&gt;
 &lt;p&gt;In the pictures below im running the playbook in my lab, to update my Proxmox host and VMs:&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/images/nodexporter_first.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://ulrikvinther.dk/images/nodexporter_first.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;First part of demo&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/images/nodexporter_second.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://ulrikvinther.dk/images/nodexporter_second.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;Second part of demo&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
