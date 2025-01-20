@@ -2,29 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ulrikvinther.dk/posts/automate_nodeexporter_updates/</loc>
+    <loc>http://localhost:1313/posts/automate_nodeexporter_updates/</loc>
     <lastmod>2025-01-16T23:19:01+01:00</lastmod>
   </url><url>
-    <loc>https://ulrikvinther.dk/tags/automation/</loc>
+    <loc>http://localhost:1313/tags/automation/</loc>
     <lastmod>2025-01-16T23:19:01+01:00</lastmod>
   </url><url>
-    <loc>https://ulrikvinther.dk/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-01-16T23:19:01+01:00</lastmod>
   </url><url>
-    <loc>https://ulrikvinther.dk/tags/linux/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-01-16T23:19:01+01:00</lastmod>
   </url><url>
-    <loc>https://ulrikvinther.dk/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-01-16T23:19:01+01:00</lastmod>
   </url><url>
-    <loc>https://ulrikvinther.dk/tags/proxmox/</loc>
+    <loc>http://localhost:1313/tags/proxmox/</loc>
     <lastmod>2025-01-16T23:19:01+01:00</lastmod>
   </url><url>
-    <loc>https://ulrikvinther.dk/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2023-03-16T10:41:31+01:00</lastmod>
   </url><url>
-    <loc>https://ulrikvinther.dk/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>https://ulrikvinther.dk/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>
