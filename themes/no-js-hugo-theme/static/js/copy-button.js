@@ -1,3 +1,4 @@
+// Script for code block copy button that also removes first and last line (empty spaces that does not need to be copied)
 document.addEventListener('DOMContentLoaded', (event) => {
   // Select all code blocks inside <pre> tags
   document.querySelectorAll('pre code').forEach((block) => {
@@ -23,11 +24,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Add an event listener to the button
     button.addEventListener('click', async () => {
       try {
-        // Get the text contents of the code block
+        // Get the text contents of the code block, excluding the first and last lines
         const text = block.textContent;
+        const lines = text.split('\n');
+        const firstLine = lines.shift();
+        const lastLine = lines.pop();
+        if (lastLine === '') {
+          lines.pop();
+        }
+        const copiedText = lines.join('\n').replace(/\n+$/, '');
 
         // Copy the text to the clipboard
-        await navigator.clipboard.writeText(text);
+        await navigator.clipboard.writeText(copiedText);
 
         // Update the button text to indicate that the code has been copied
         button.textContent = 'Copied!';

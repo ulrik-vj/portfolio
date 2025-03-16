@@ -90,7 +90,7 @@ A way to make it easier to administrate we can use Ansible.</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">excluded_ips</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          {{ lookup(&#39;file&#39;, &#39;exclude_ips.txt&#39;)
 </span></span></span><span class="line"><span class="cl"><span class="sd">             .splitlines() | default([]) }}
-</span></span></span><span class="line"><span class="cl"><span class="sd">          # Reads the IPs from the file</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          # Reads the IPs from the file</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Upgrade promethus node exporter on proxmox host</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
@@ -98,7 +98,7 @@ A way to make it easier to administrate we can use Ansible.</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ansible_become_pass</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ ansible_password }}&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">        /opt/prometheus-pve-exporter/bin/pip install --upgrade prometheus-pve-exporter
-</span></span></span><span class="line"><span class="cl"><span class="sd">        # Replace with the desired pip version or binary</span><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="sd">        # Replace with the desired pip version or binary</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname == &#34;192.168.XX.XX&#34; </span><span class="w"> </span><span class="c"># Insert your proxmox ip</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Run custom script on all servers, except hosts listed in exclude_ips.txt</span><span class="w">
@@ -106,8 +106,7 @@ A way to make it easier to administrate we can use Ansible.</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">vars</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ansible_become_pass</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ ansible_password }}&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l">scripts/update-nodeexporter.sh</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname not in excluded_ips </span><span class="w"> </span><span class="c"># Exclude hosts from the list</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l">shell_result</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">inventory_hostname not in excluded_ips </span><span class="w"> </span><span class="c"># Exclude hosts from the lists</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Output the result of the script</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">debug</span><span class="p">:</span><span class="w">
@@ -117,13 +116,13 @@ A way to make it easier to administrate we can use Ansible.</p>
 </span></span></span></code></pre></div><p>The playbook simply does:</p>
 <ol>
 <li>Load IPs from excluded IPs file and save those, so the playbook can filter them out later if they dont need update (e.g., host does not use node-exporter).</li>
-<li>Update prometheus on the proxmox host, with pip by looking for only a specific IP from the hosts file (Your proxmox host IP)</li>
+<li>Update prometheus on the proxmox host, with pip by looking for only a specific IP from the hosts file (Your proxmox host IP).</li>
 <li>Update all servers from hosts file, with a <a href="https://github.com/ulrik-vj/ansible-playbooks/blob/main/nodeexporter/scripts/update-nodeexporter.sh">Custom bash script</a> that fetches latests node exporter binary file and replace the previous one on the server. Here the excluded IPs are being used. If IP is present from hosts file and also in the excluded file, it will skip that IP.</li>
 <li>Output from custom bash script, in case you want to see results.</li>
 </ol>
 <h2 id="script-example-during-a-run">Script example during a run<a href="#script-example-during-a-run" class="heading-anchor" aria-label="Anchor"><img src="/images/chain-link.svg" class="color-adapting-image" height="20"></a></h2>
 <p>In the pictures below im running the playbook in my lab, to update my Proxmox host and VMs:</p>
-<figure><img src="/images/nodexporter_first.png"><figcaption>
+<figure class="zoomable"><img src="/images/nodexporter_first.png"><figcaption>
       <h4>First part of demo</h4>
     </figcaption>
 </figure>

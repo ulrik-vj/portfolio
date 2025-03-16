@@ -44,19 +44,22 @@
                   {{ end }}
                 </div>
 
-                {{ $tags := .Params.tags }} <!-- Get the tags -->
-                {{ if $tags }} <!-- Check if there are any tags -->
-                  <div class="post-tags">
-                    <span class="post-tags-label">🏷️ Tags: </span>
-                    {{ range $tags }}
-                     {{ if ne . "latest" }} <!-- Exclude the "latest" tag -->
-  						<span class="tag-link">{{ . }}</span>
-					{{ end }}
-                    {{ end }}
-                  </div>
+              {{ $tags := .Params.tags }} <!-- Get the tags -->
+          {{ if $tags }} <!-- Check if there are any tags -->
+            {{ $filteredTags := (slice) }} <!-- Initialize an empty slice for filtered tags -->
+            <div class="post-tags">
+              <span class="post-tags-label">🏷️ Tags: </span> <!-- Display the "Tags" label with the same style -->
+              {{ range $tags }} <!-- Iterate over the tags -->
+                {{ if ne . "latest" }} <!-- Check if the tag is not "latest" -->
+                  {{ $filteredTags = $filteredTags | append . }} <!-- Append to filtered tags -->
                 {{ end }}
-              </div>
-
+              {{ end }}
+              {{ if $filteredTags }} <!-- Check if there are any filtered tags -->
+                <span>{{ delimit $filteredTags ", " }}</span> <!-- Display filtered tags -->
+              {{ end }}
+            </div>
+          {{ end }}
+            </div>
               <div class="body-list">
                 <p></p>
                 <p>{{ .Summary | truncate 230 }}</p>

@@ -40,8 +40,7 @@ A way to make it easier to administrate we can use Ansible.
       vars:
         ansible_become_pass: "{{ ansible_password }}"
       script: scripts/update-nodeexporter.sh
-      when: inventory_hostname not in excluded_ips  # Exclude hosts from the list
-      register: shell_result
+      when: inventory_hostname not in excluded_ips  # Exclude hosts from the lists
 
     - name: Output the result of the script
       debug:
@@ -53,7 +52,7 @@ A way to make it easier to administrate we can use Ansible.
 The playbook simply does:
 
 1. Load IPs from excluded IPs file and save those, so the playbook can filter them out later if they dont need update (e.g., host does not use node-exporter).
-2. Update prometheus on the proxmox host, with pip by looking for only a specific IP from the hosts file (Your proxmox host IP)
+2. Update prometheus on the proxmox host, with pip by looking for only a specific IP from the hosts file (Your proxmox host IP).
 3. Update all servers from hosts file, with a [Custom bash script](https://github.com/ulrik-vj/ansible-playbooks/blob/main/nodeexporter/scripts/update-nodeexporter.sh) that fetches latests node exporter binary file and replace the previous one on the server. Here the excluded IPs are being used. If IP is present from hosts file and also in the excluded file, it will skip that IP.
 4. Output from custom bash script, in case you want to see results.
 
@@ -61,7 +60,7 @@ The playbook simply does:
 
 In the pictures below im running the playbook in my lab, to update my Proxmox host and VMs:
 
-{{< figure src="/images/nodexporter_first.png" title="First part of demo" >}}
+{{< figure src="/images/nodexporter_first.png" title="First part of demo" class="zoomable">}}
 
 {{< figure src="/images/nodexporter_second.png" title="Second part of demo" >}}
 
