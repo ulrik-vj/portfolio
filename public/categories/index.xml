@@ -60,7 +60,7 @@ A way to make it easier to administrate we can use Ansible.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;script-example-during-a-run&#34;&gt;Script example during a run&lt;/h2&gt;
 &lt;p&gt;In the pictures below im running the playbook in my lab, to update my Proxmox host and VMs:&lt;/p&gt;
-&lt;figure class=&#34;zoomable&#34;&gt;&lt;img src=&#34;https://ulrikvinther.dk/images/nodexporter_first.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://ulrikvinther.dk/images/nodexporter_first.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;First part of demo&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;

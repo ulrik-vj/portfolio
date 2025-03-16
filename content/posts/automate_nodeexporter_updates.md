@@ -60,7 +60,7 @@ The playbook simply does:
 
 In the pictures below im running the playbook in my lab, to update my Proxmox host and VMs:
 
-{{< figure src="/images/nodexporter_first.png" title="First part of demo" class="zoomable">}}
+{{< figure src="/images/nodexporter_first.png" title="First part of demo" >}}
 
 {{< figure src="/images/nodexporter_second.png" title="Second part of demo" >}}
 
